@@ -9,7 +9,7 @@ from app.gastos import gastos_bp
 from app.presupuestos import presupuestos_bp
 from app.metas import metas_bp
 from app.balance import balance_bp
-from app.exportar import exportar_bp
+from app.exportaciones import exportaciones_bp
 from app.categorias import categorias_bp
 from app.proyecciones import proyecciones_bp
 from app.recomendaciones import recomendaciones_bp  # 👈 Nuevo
