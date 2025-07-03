@@ -6,7 +6,7 @@ from .models import Ingreso, Gasto
 from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
 
-exportar_bp = Blueprint('exportar', __name__, url_prefix='/exportar')
+exportaciones_bp = Blueprint('exportaciones', __name__, url_prefix='/exportar')
 
 @exportar_bp.route('/excel')
 @login_required
