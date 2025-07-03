@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestor de Finanzas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>💼 Gestor de Finanzas</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('balance.balance') }}">🏠 Balance</a></li>
+                <li><a href="{{ url_for('ingresos.ingresos') }}">💰 Ingresos</a></li>
+                <li><a href="{{ url_for('gastos.gastos') }}">💸 Gastos</a></li>
+                <li><a href="{{ url_for('presupuestos.presupuestos') }}">📊 Presupuestos</a></li>
+                <li><a href="{{ url_for('metas.metas') }}">🎯 Metas</a></li>
+                <li><a href="{{ url_for('categorias.categorias') }}">📂 Categorías</a></li>
+                <li><a href="{{ url_for('proyecciones.proyecciones') }}">📈 Proyecciones</a></li>
+                <li><a href="{{ url_for('recomendaciones.recomendaciones') }}">💡 Recomendaciones</a></li>
+                <li><a href="{{ url_for('exportar.exportar_pdf') }}">📄 Exportar</a></li>
+                <li><a href="{{ url_for('auth.logout') }}">🔓 Cerrar sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>Desarrollado por Nelson Adrián Jaramillo Arias y equipo SENA</p>
+    </footer>
+</body>
+</html>

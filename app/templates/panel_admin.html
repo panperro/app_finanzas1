@@ -1,0 +1,69 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h2>🛠️ Panel de Administración</h2>
+
+<h3>👥 Usuarios Registrados</h3>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Usuario</th>
+            <th>Rol</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for u in usuarios %}
+        <tr>
+            <td>{{ u.id }}</td>
+            <td>{{ u.username }}</td>
+            <td>{{ u.rol }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<h3>📈 Ingresos Globales</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Usuario</th>
+            <th>Monto</th>
+            <th>Categoría</th>
+            <th>Fecha</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for i in ingresos %}
+        <tr>
+            <td>{{ i.usuario.username }}</td>
+            <td>{{ i.monto }}</td>
+            <td>{{ i.categoria }}</td>
+            <td>{{ i.fecha.strftime('%Y-%m-%d') }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<h3>📉 Gastos Globales</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Usuario</th>
+            <th>Monto</th>
+            <th>Categoría</th>
+            <th>Fecha</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for g in gastos %}
+        <tr>
+            <td>{{ g.usuario.username }}</td>
+            <td>{{ g.monto }}</td>
+            <td>{{ g.categoria }}</td>
+            <td>{{ g.fecha.strftime('%Y-%m-%d') }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

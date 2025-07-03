@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h2>💰 Ingresos</h2>
+
+<form method="POST">
+    <label for="monto">Monto:</label>
+    <input type="number" name="monto" step="0.01" required>
+
+    <label for="categoria">Categoría:</label>
+    <select name="categoria" required>
+        {% for cat in categorias %}
+            <option value="{{ cat.nombre }}">{{ cat.nombre }}</option>
+        {% else %}
+            <option disabled>No hay categorías disponibles</option>
+        {% endfor %}
+    </select>
+
+    <button type="submit">Agregar ingreso</button>
+</form>
+
+<hr>
+
+<h3>Historial de Ingresos</h3>
+<table>
+    <tr>
+        <th>Fecha</th>
+        <th>Categoría</th>
+        <th>Monto</th>
+    </tr>
+    {% for ingreso in ingresos %}
+    <tr>
+        <td>{{ ingreso.fecha }}</td>
+        <td>{{ ingreso.categoria }}</td>
+        <td>${{ ingreso.monto }}</td>
+    </tr>
+    {% else %}
+    <tr>
+        <td colspan="3">No hay ingresos registrados.</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

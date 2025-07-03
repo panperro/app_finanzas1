@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h2>📊 Balance General</h2>
+
+<div class="resumen">
+    <p><strong>Total Ingresos:</strong> ${{ ingresos }}</p>
+    <p><strong>Total Gastos:</strong> ${{ gastos }}</p>
+    <p><strong>Balance Disponible:</strong> <span style="color: {{ 'green' if balance >= 0 else 'red' }};">
+        ${{ balance }}
+    </span></p>
+</div>
+
+<div class="exportar">
+<a href="{{ url_for('exportar.exportar_pdf') }}" class="btn">📄 Exportar a PDF</a>
+    <a href="{{ url_for('exportaciones.exportar_excel') }}">📥 Exportar a Excel</a>
+</div>
+{% endblock %}

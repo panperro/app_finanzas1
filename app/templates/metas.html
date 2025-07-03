@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h2>🎯 Metas de Ahorro</h2>
+<form method="POST">
+    <label for="objetivo">Objetivo:</label>
+    <input type="text" name="objetivo" required>
+
+    <label for="monto_objetivo">Monto Objetivo:</label>
+    <input type="number" name="monto_objetivo" required step="0.01">
+
+    <button type="submit">Agregar Meta</button>
+</form>
+
+<h3>Mis Metas</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Objetivo</th>
+            <th>Monto Objetivo</th>
+            <th>Monto Actual</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for meta in metas %}
+        <tr>
+            <td>{{ meta.objetivo }}</td>
+            <td>{{ meta.monto_objetivo }}</td>
+            <td>{{ meta.monto_actual }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

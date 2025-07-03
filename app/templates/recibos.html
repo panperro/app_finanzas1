@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h2>📎 Subida de Recibos</h2>
+
+<form method="POST" enctype="multipart/form-data">
+    <label for="archivo">Seleccionar archivo (PDF o imagen):</label>
+    <input type="file" name="archivo" required>
+    <button type="submit">Subir Recibo</button>
+</form>
+
+<h3>📂 Mis Recibos</h3>
+<ul>
+    {% for archivo in recibos %}
+        <li><a href="{{ url_for('static', filename='recibos/' + archivo) }}" target="_blank">{{ archivo }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

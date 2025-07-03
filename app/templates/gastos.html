@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h2>💸 Gastos</h2>
+
+<form method="POST">
+    <label for="monto">Monto:</label>
+    <input type="number" name="monto" step="0.01" required>
+
+    <label for="categoria">Categoría:</label>
+    <select name="categoria" required>
+        {% for cat in categorias %}
+            <option value="{{ cat.nombre }}">{{ cat.nombre }}</option>
+        {% else %}
+            <option disabled>No hay categorías disponibles</option>
+        {% endfor %}
+    </select>
+
+    <button type="submit">Agregar gasto</button>
+</form>
+
+<hr>
+
+<h3>Historial de Gastos</h3>
+<table>
+    <tr>
+        <th>Fecha</th>
+        <th>Categoría</th>
+        <th>Monto</th>
+    </tr>
+    {% for gasto in gastos %}
+    <tr>
+        <td>{{ gasto.fecha }}</td>
+        <td>{{ gasto.categoria }}</td>
+        <td>${{ gasto.monto }}</td>
+    </tr>
+    {% else %}
+    <tr>
+        <td colspan="3">No hay gastos registrados.</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

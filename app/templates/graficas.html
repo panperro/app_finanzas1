@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h2>📉 Gráficas Financieras</h2>
+
+<h3>Distribución de Ingresos</h3>
+<div>
+    {{ graf_ingresos|safe }}
+</div>
+
+<h3>Gastos por Categoría</h3>
+<div>
+    {{ graf_gastos|safe }}
+</div>
+{% endblock %}

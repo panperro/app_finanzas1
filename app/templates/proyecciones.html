@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h2>📈 Proyección Financiera</h2>
+
+{% if mensaje %}
+    <p>{{ mensaje }}</p>
+{% else %}
+    <div>
+        {{ grafica|safe }}
+    </div>
+{% endif %}
+{% endblock %}

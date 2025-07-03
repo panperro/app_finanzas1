@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h2>💡 Recomendaciones Inteligentes</h2>
+
+<ul>
+    {% for r in recomendaciones %}
+        <li>{{ r }}</li>
+    {% else %}
+        <p>No hay recomendaciones por ahora.</p>
+    {% endfor %}
+</ul>
+{% endblock %}

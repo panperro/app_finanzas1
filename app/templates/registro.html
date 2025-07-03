@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h2>Registro de Usuario</h2>
+<form method="POST">
+    <label for="username">Usuario:</label>
+    <input type="text" name="username" required>
+    
+    <label for="contraseña">Contraseña:</label>
+    <input type="password" name="contraseña" required>
+
+    <button type="submit">Registrarse</button>
+</form>
+
+<p>¿Ya tienes una cuenta? <a href="{{ url_for('auth.login') }}">Inicia sesión</a></p>
+{% endblock %}

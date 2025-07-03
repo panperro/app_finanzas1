@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h2>💼 Presupuestos</h2>
+<form method="POST">
+    <label for="monto">Monto:</label>
+    <input type="number" name="monto" required step="0.01">
+    
+    <label for="categoria">Categoría:</label>
+    <input type="text" name="categoria" required>
+
+    <label for="inicio">Fecha Inicio:</label>
+    <input type="date" name="inicio" required>
+
+    <label for="fin">Fecha Fin:</label>
+    <input type="date" name="fin" required>
+
+    <button type="submit">Agregar Presupuesto</button>
+</form>
+
+<h3>Presupuestos Actuales</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Monto</th>
+            <th>Categoría</th>
+            <th>Desde</th>
+            <th>Hasta</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for p in presupuestos %}
+        <tr>
+            <td>{{ p.monto }}</td>
+            <td>{{ p.categoria }}</td>
+            <td>{{ p.fecha_inicio }}</td>
+            <td>{{ p.fecha_fin }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

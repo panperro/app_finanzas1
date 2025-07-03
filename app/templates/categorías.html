@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h2>📂 Mis Categorías</h2>
+
+<form method="POST">
+    <label for="nombre">Nombre de la categoría:</label>
+    <input type="text" name="nombre" required>
+
+    <label for="tipo">Tipo:</label>
+    <select name="tipo" required>
+        <option value="ingreso">Ingreso</option>
+        <option value="gasto">Gasto</option>
+    </select>
+
+    <button type="submit">Agregar categoría</button>
+</form>
+
+<hr>
+
+<h3>Categorías registradas:</h3>
+<ul>
+    {% for cat in categorias %}
+        <li>{{ cat.nombre }} — <strong>{{ cat.tipo }}</strong></li>
+    {% else %}
+        <p>No hay categorías registradas.</p>
+    {% endfor %}
+</ul>
+{% endblock %}
