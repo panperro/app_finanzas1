@@ -34,7 +34,7 @@ app.register_blueprint(gastos_bp)
 app.register_blueprint(presupuestos_bp)
 app.register_blueprint(metas_bp)
 app.register_blueprint(balance_bp)
-app.register_blueprint(exportar_bp)
+app.register_blueprint(exportaciones_bp)
 app.register_blueprint(categorias_bp)
 app.register_blueprint(proyecciones_bp)
 app.register_blueprint(recomendaciones_bp)  # ✅ Ya integrado
